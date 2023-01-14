@@ -121,7 +121,9 @@
 
 <script>
 // 마커를 담을 배열입니다
-var markers = [33.450701, 126.570667];
+var markers = new kakao.maps.Marker({
+    position: markerPosition
+});
 
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
     mapOption = {
@@ -141,6 +143,7 @@ var infowindow = new kakao.maps.InfoWindow({zIndex:1});
 // 마커가 표시될 위치입니다.
 var map = new kakao.maps.Map(mapContainer, mapOption);
 
+var markerPosition = new kakao.maps.LatLng(33.450701, 126.570667);
 // 키워드로 장소를 검색합니다
 searchPlaces();
 
